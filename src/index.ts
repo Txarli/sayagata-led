@@ -1,21 +1,16 @@
-import Fastify from "fastify";
-import cors from "@fastify/cors";
+import { Server } from "socket.io";
 
-const fastify = Fastify({
-  logger: true,
-});
-await fastify.register(cors, {
-  origin: 'http://localhost:8000',
-});
-
-fastify.post("/led-strip", function (_request, reply) {
-  console.log("Recibida llamada de leds 🎉");
-  reply.send(200);
+const io = new Server(3000, {
+  cors: {
+    origin: "http://localhost:8000",
+    methods: ["GET", "POST"],
+  },
 });
 
-fastify.listen({ port: 10000 }, function (err, _address) {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
+io.on("connection", (socket) => {
+  socket.on("movida", () => {
+    console.log("Movida recibida 🎉");
+
+    socket.emit("nuevaMovida");
+  });
 });
