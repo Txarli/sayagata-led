@@ -4,7 +4,7 @@
   "description": "Backend for the control of the LEDs in Sayagat",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [
     "genart",
@@ -12,5 +12,8 @@
     "sayagata"
   ],
   "author": "Aitor Carlos Urrutia Aranburu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.15.0"
+  }
 }
