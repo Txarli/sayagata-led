@@ -5,7 +5,7 @@ const fastify = Fastify({
   logger: true,
 });
 await fastify.register(cors, {
-  origin: '*',
+  origin: 'http://localhost:8000',
 });
 
 fastify.post("/led-strip", function (_request, reply) {
