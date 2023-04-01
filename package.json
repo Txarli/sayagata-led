@@ -2,9 +2,14 @@
   "name": "sayagata-leds",
   "version": "1.0.0",
   "description": "Backend for the control of the LEDs in Sayagat",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "start": "ts-node server.ts"
+    "start": "node ./dist/index.js",
+    "build": "run-s -l build:*",
+    "build:type-check": "tsc --noEmit",
+    "build:clean": "rimraf dist",
+    "build:run-babel-node": "babel src -d dist --extensions \".ts\""
   },
   "keywords": [
     "genart",
@@ -14,7 +19,11 @@
   "author": "Aitor Carlos Urrutia Aranburu",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
     "fastify": "^4.15.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.4.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.3"
   }
