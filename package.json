@@ -1,0 +1,16 @@
+{
+  "name": "sayagata-leds",
+  "version": "1.0.0",
+  "description": "Backend for the control of the LEDs in Sayagat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "genart",
+    "led",
+    "sayagata"
+  ],
+  "author": "Aitor Carlos Urrutia Aranburu",
+  "license": "ISC"
+}
