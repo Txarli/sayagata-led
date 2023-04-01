@@ -4,7 +4,7 @@ const fastify = Fastify({
   logger: true
 })
 
-fastify.get('/', function (_request, reply) {
+fastify.get('/hello', function (_request, reply) {
   reply.send({ hello: 'world' })
 })
 
