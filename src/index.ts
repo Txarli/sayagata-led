@@ -20,7 +20,7 @@ server.listen(3000, () => {
   console.log("listening on *:3000");
 });
 
-const io = new Server(server, {
+const io = new Server(2000, {
   cors: {
     origin: "http://localhost:8000",
     methods: ["GET", "POST"],
