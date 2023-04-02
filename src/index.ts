@@ -16,7 +16,7 @@ app.post("/kaixo", (req, res) => {
   res.send(isEnabled ? "ON" : "OFF");
 });
 
-server.listen(3000, () => {
+server.listen(80, () => {
   console.log("listening on *:3000");
 });
 
