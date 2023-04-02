@@ -11,7 +11,11 @@ app.get("/", (req, res) => {
   res.send(`I'm alive! 🎉\nLED strip status -> ${isEnabled ? "ON" : "OFF"}`);
 });
 
-const io = new Server(2000, {
+server.listen(3000, () => {
+  console.log("listening on *:3000");
+});
+
+const io = new Server(server, {
   cors: {
     origin: "http://localhost:8000",
     methods: ["GET", "POST"],
@@ -26,6 +30,3 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("listening on *:3000");
-});
