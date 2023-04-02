@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 import express from "express";
 import http from "http";
 
-let isEnabled: boolean = false;
+let isEnabled = false;
 
 const app = express();
 const server = http.createServer(app);
