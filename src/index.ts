@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.send(`I'm alive! 🎉\nLED strip status -> ${isEnabled ? "ON" : "OFF"}`);
 });
 
-const io = new Server(server, {
+const io = new Server(3000, {
   cors: {
     origin: "http://localhost:8000",
     methods: ["GET", "POST"],
