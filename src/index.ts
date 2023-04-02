@@ -17,7 +17,7 @@ app.post("/kaixo", (req, res) => {
 });
 
 server.listen(80, () => {
-  console.log("listening on *:3000");
+  console.log("listening on *:80");
 });
 
 const io = new Server(2000, {
